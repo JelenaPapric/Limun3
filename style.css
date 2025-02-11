@@ -181,11 +181,13 @@ header{
 }
 
 .logo {
-    margin-top: 20px ;
+    margin-top: 0px ;
     height: 70px;
     width: auto;
     float: left;
 }
+
+/*Main navi*/
 
 .main-nav {
     float: right;
@@ -196,6 +198,7 @@ header{
     display: inline-block;
     margin-left: 40px ;
     margin-top: 30px ;
+    margin-bottom: 0;
 }
 
 .main-nav li a:link,
@@ -214,6 +217,36 @@ header{
 .main-nav li a:active {
     border-bottom: 2px solid black;
 }
+
+/*Mobile navi*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 3px;
+    cursor: pointer;
+    display: none;
+    font-size: 200%;
+}
+
+/*Sticky navi*/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.958);
+    box-shadow: 0 2px 2px rgb(162, 162, 162);
+    z-index: 9999;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 16px 0;
+    color:#3d2302;
+
+}
+
+.main-nav {margin-top: 18px;}
 
 .icons-features{
     margin-top: 20px ;
@@ -352,7 +385,7 @@ label {
     text-align: left;
 }
 .contact-form{
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -371,7 +404,28 @@ textarea {
 
 *:focus {outline: none;}
 
+.map-box {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
 
+.map {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: 0;
+}
+
+.form-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.807);
+    z-index: 10;
+    height: 500px;
+    width: 50%;
+}
 
 /* ----------------------------------------------------------------------*/
 /* FOOTER */
@@ -426,3 +480,24 @@ footer {
     text-align: center;
     color: #a4a4a4;
 }
+
+
+
+
+/* ----------------------------------------------------------------------*/
+/* ANIMATIONS */
+/* ----------------------------------------------------------------------*/
+
+.js--wp-1,
+.js--wp-2
+{
+    opacity: 0;
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated
+{
+    opacity: 1;
+}
+
